@@ -23,13 +23,14 @@ words = utils.read_file("words.txt")
 def send_data():
     data = {}
     letters= request.args.get("let")
-    print(letters)
+    if len(letters) > 10:
+        letters = letters[:13]
     if letters:
         for i in range(3, len(letters)+1):
             perms = utils.find_perms(letters, i)
             data[str(i)]= sorted(utils.search_words(words, perms))
-    #logger.log("Sarched letters",letters)
-    return jsonify(data) #json.JSONEncoder().encode(data)
+    logger.log("Letters searched: ",letters)
+    return jsonify(data)
 
 @app.route('/')
 def hello_world():
