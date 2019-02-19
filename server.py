@@ -29,7 +29,6 @@ def send_data():
         for i in range(3, len(letters)+1):
             perms = utils.find_perms(letters, i)
             data[str(i)]= sorted(utils.search_words(words, perms))
-    #logger.log("Letters searched: ",letters)
     return jsonify(data)
 
 @app.route('/')
