@@ -50,5 +50,4 @@ def binary_search(alist, item):
                 last = midpoint-1
             else:
                 first = midpoint+1
-
     return found
