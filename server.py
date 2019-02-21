@@ -39,5 +39,6 @@ def hello_world():
 def page_not_found():
     return render_template('error.html')
 
+
 if __name__ == '__main__':
     app.run()
