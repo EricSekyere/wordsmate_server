@@ -37,7 +37,7 @@ def hello_world():
 
 @app.errorhandler(404)
 def page_not_found():
-    pass
+    return render_template('error.html')
 
 if __name__ == '__main__':
     app.run()
