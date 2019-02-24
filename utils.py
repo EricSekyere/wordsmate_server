@@ -11,6 +11,7 @@ def read_file(filename, mode='r'):
     filename = os.path.join(fpath, filename)
     with open(filename, mode, encoding = "utf-8", newline="") as file_item:
         content = file_item.readlines()
+        
         for line in content:
             data.append(line.replace("\r\n", "").replace("\n", ""))
     return data
